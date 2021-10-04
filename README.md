@@ -1,64 +1,62 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+install beyondcode/laravel-websockets
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+how to install can be find [here](https://beyondco.de/docs/laravel-websockets/getting-started/installation)
 
-## About Laravel
+if have this error when installing
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+```
+Problem 1
+    - beyondcode/laravel-websockets[1.12.0, ..., 1.x-dev] require guzzlehttp/psr7 ^1.5 -> found guzzlehttp/psr7[1.5.0, ..., 1.x-dev] but the package is fixed to 2.0.0 (lock file version) by a partial update and that version does not match. Make sure you list it as an argument for the update command.
+    - Root composer.json requires beyondcode/laravel-websockets ^1.12 -> satisfiable by beyondcode/laravel-websockets[1.12.0, 1.x-dev].
+```
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+add this options on installing
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+```
+composer require beyondcode/laravel-websockets --with-all-dependencies
+```
 
-## Learning Laravel
+or
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+```
+composer require beyondcode/laravel-websockets -W
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+to make websocket using secure connection please add 
+```
+LARAVEL_WEBSOCKETS_SSL_LOCAL_CERT="[FILE_LOCATION]"
+LARAVEL_WEBSOCKETS_SSL_LOCAL_PK="[FILE_LOCATION]"
+```
+to .env
 
-## Laravel Sponsors
+it seems we cannot verify the peer, so must add this to websockets config after the passphrase
+```
+'verify_peer' => env('LARAVEL_WEBSOCKETS_SSL_VERIFY_PEER', false),
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+start websocket server
+```
+php artisan websocket:serve
+```
 
-### Premium Partners
+test websocket using chrome app piesocket
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
+```
+ws://[HOSTNAME]:6001/app/[PUSHER_APP_KEY]
+SSL => wss://[HOSTNAME]:6001/app/[PUSHER_APP_KEY]
+```
 
-## Contributing
+on bootstrap.js should look like this
+```
+import Echo from 'laravel-echo';
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+window.Pusher = require('pusher-js');
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+window.Echo = new Echo({
+    broadcaster: 'pusher',
+    key: process.env.MIX_PUSHER_APP_KEY,
+    wsHost: window.location.hostname,
+    wsPort: 6001,
+    forceTLS: false,
+});
+```
