@@ -31,7 +31,6 @@ function onOpen(event) {
 function onMessage(event) {
     event = JSON.parse(event.data)
     var eventName = event.event
-    console.log(eventName);
     switch (eventName) {
         case 'pusher:connection_established':
             if (debug) console.log("||| CONNECTED |||")

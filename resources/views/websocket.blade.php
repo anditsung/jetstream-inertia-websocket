@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link rel="stylesheet" href="{{ mix('app.css', 'vendor/web') }}">
 
     <script src="{!! asset('vendor/websocket/jquery-3.6.0.min.js') !!}"></script>
     <script src="{{ asset('vendor/websocket/index.js') }}"></script>
@@ -36,7 +36,7 @@
     </div>
 
     <script>
-        window.debug = true;
+        window.debug = false;
         window.channel = 'websocket-inspiring-event'
         window.listen = 'inspiring-update'
 
