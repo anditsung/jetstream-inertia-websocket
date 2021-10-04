@@ -16,22 +16,22 @@
     <script src="{{ asset('vendor/websocket/index.js') }}"></script>
 
 </head>
-<body class="font-sans antialiased bg-gray-200">
-    <div class="flex min-h-screen justify-center">
-        <div class="flex items-center">
-            <div class="flex flex-col text-center">
-                <div class="flex justify-center p-4" id="quote_div">
-                    <span class="text-5xl -mt-5">"</span>
-                    <div class="flex flex-col space-x-2">
-                        <div class="italic" id="quote_text"></div>
-                        <div class="h-full text-right font-bold" id="by_text"></div>
-                    </div>
-                    <span class="text-5xl -mt-5">"</span>
+<body class="font-sans antialiased">
+    <div class="flex flex-col min-h-screen bg-gray-200">
+        <div class="flex justify-end p-4 space-x-2">
+            <a class="font-bold px-4 py-2 bg-blue-300 rounded-lg hover:bg-blue-400" href="/">Home</a>
+            <a class="font-bold px-4 py-2 bg-blue-300 rounded-lg hover:bg-blue-400" href="/inertia-websocket">Inertia Websocket</a>
+        </div>
+        <div class="flex flex-col flex-grow justify-center items-center">
+            <div class="flex justify-center p-4" id="quote_div">
+                <span class="text-5xl -mt-5">"</span>
+                <div class="flex flex-col space-x-2">
+                    <div class="italic" id="quote_text"></div>
+                    <div class="h-full text-right font-bold" id="by_text"></div>
                 </div>
-                <div>
-                    <button class="px-4 py-2 bg-blue-300 rounded-lg hover:bg-blue-400" id="inspiring_button">Get Inspiring using websocket</button>
-                </div>
+                <span class="text-5xl -mt-5">"</span>
             </div>
+            <button class="px-4 py-2 bg-blue-300 rounded-lg hover:bg-blue-400" id="inspiring_button">Get Inspiring using websocket</button>
         </div>
     </div>
 

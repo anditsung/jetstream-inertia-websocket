@@ -25,8 +25,12 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/websocket', function () {
+Route::get('/vanilla-websocket', function () {
     return view('websocket');
+});
+
+Route::get('/inertia-websocket', function () {
+    return Inertia::render('Websocket');
 });
 
 Route::get('/get-websocket-inspiring', function () {

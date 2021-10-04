@@ -1111,12 +1111,6 @@ select {
 .col-span-6 {
 	grid-column: span 6 / span 6;
 }
-.float-right {
-	float: right;
-}
-.float-left {
-	float: left;
-}
 .mx-auto {
 	margin-left: auto;
 	margin-right: auto;
@@ -1190,20 +1184,11 @@ select {
 .mb-4 {
 	margin-bottom: 1rem;
 }
-.-mt-px {
-	margin-top: -1px;
-}
-.-mt-10 {
-	margin-top: -2.5rem;
-}
 .-mt-5 {
 	margin-top: -1.25rem;
 }
-.-mb-5 {
-	margin-bottom: -1.25rem;
-}
-.mb-5 {
-	margin-bottom: 1.25rem;
+.-mt-px {
+	margin-top: -1px;
 }
 .block {
 	display: block;
@@ -1250,6 +1235,9 @@ select {
 .h-full {
 	height: 100%;
 }
+.h-screen {
+	height: 100vh;
+}
 .min-h-screen {
 	min-height: 100vh;
 }
@@ -1295,9 +1283,6 @@ select {
 .w-20 {
 	width: 5rem;
 }
-.w-1\/2 {
-	width: 50%;
-}
 .min-w-0 {
 	min-width: 0px;
 }
@@ -1318,6 +1303,9 @@ select {
 }
 .flex-shrink-0 {
 	flex-shrink: 0;
+}
+.flex-grow {
+	flex-grow: 1;
 }
 .origin-top-left {
 	transform-origin: top left;
@@ -1367,20 +1355,11 @@ select {
 .grid-cols-1 {
 	grid-template-columns: repeat(1, minmax(0, 1fr));
 }
-.flex-row {
-	flex-direction: row;
-}
 .flex-col {
 	flex-direction: column;
 }
 .flex-wrap {
 	flex-wrap: wrap;
-}
-.items-start {
-	align-items: flex-start;
-}
-.items-end {
-	align-items: flex-end;
 }
 .items-center {
 	align-items: center;
@@ -1422,6 +1401,11 @@ select {
 	--tw-space-x-reverse: 0;
 	margin-right: calc(0.5rem * var(--tw-space-x-reverse));
 	margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+	--tw-space-x-reverse: 0;
+	margin-right: calc(1rem * var(--tw-space-x-reverse));
+	margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 .overflow-hidden {
 	overflow: hidden;
@@ -1560,6 +1544,10 @@ select {
 .bg-blue-300 {
 	--tw-bg-opacity: 1;
 	background-color: rgba(147, 197, 253, var(--tw-bg-opacity));
+}
+.bg-red-200 {
+	--tw-bg-opacity: 1;
+	background-color: rgba(254, 202, 202, var(--tw-bg-opacity));
 }
 .bg-opacity-25 {
 	--tw-bg-opacity: 0.25;
@@ -1714,17 +1702,9 @@ select {
 	font-size: 1.25rem;
 	line-height: 1.75rem;
 }
-.text-3xl {
-	font-size: 1.875rem;
-	line-height: 2.25rem;
-}
 .text-5xl {
 	font-size: 3rem;
 	line-height: 1;
-}
-.text-4xl {
-	font-size: 2.25rem;
-	line-height: 2.5rem;
 }
 .font-medium {
 	font-weight: 500;
@@ -1955,6 +1935,10 @@ select {
 .hover\:bg-blue-400:hover {
 	--tw-bg-opacity: 1;
 	background-color: rgba(96, 165, 250, var(--tw-bg-opacity));
+}
+.hover\:bg-blue-500:hover {
+	--tw-bg-opacity: 1;
+	background-color: rgba(59, 130, 246, var(--tw-bg-opacity));
 }
 .hover\:text-gray-500:hover {
 	--tw-text-opacity: 1;
