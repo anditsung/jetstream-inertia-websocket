@@ -14,6 +14,7 @@
 
         <!-- Scripts -->
         @routes
+        <script src="https://cdn.jsdelivr.net/npm/weakmap@0.0.6/weakmap.min.js"></script>
         <script src="{{ mix('es6.support.js', 'vendor/web') }}" defer></script>
         <script src="{{ mix('app.vanilla.js', 'vendor/web') }}" defer></script>
     </head>
