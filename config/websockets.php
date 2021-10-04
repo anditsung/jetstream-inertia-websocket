@@ -132,7 +132,7 @@ return [
         /*
          * verify peer
          */
-        'verify_peer' => env('LARAVEL_WEBSOCKETS_SSL_VERIFY_PEER', false),
+        'verify_peer' => env('LARAVEL_WEBSOCKETS_SSL_VERIFY_PEER', true),
     ],
 
     /*

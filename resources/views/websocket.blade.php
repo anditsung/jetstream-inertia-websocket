@@ -35,7 +35,6 @@
     </div>
 
     <script>
-        window.debug = false;
         window.channel = 'websocket-inspiring-event'
         window.listen = 'inspiring-update'
 

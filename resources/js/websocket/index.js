@@ -1,3 +1,5 @@
+window.debug = false;
+
 function init_websocket(url) {
     websocket = new WebSocket(url)
 
