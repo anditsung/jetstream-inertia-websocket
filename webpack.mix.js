@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+require('laravel-mix-polyfill')
 
 /*
  |--------------------------------------------------------------------------
@@ -11,7 +12,7 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', '').vue()
+mix.js(['resources/js/app.js', 'resources/js/weakmap.js'], '').vue()
     .scripts([
         'resources/js/websocket/index.js',
         'resources/js/websocket/jquery-3.6.0.min.js'
