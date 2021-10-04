@@ -28,6 +28,8 @@ LARAVEL_WEBSOCKETS_SSL_LOCAL_CERT="[FILE_LOCATION]"
 LARAVEL_WEBSOCKETS_SSL_LOCAL_PK="[FILE_LOCATION]"
 ```
 to .env
+if not remove that line from .env
+if that line exist will make wss secure
 
 it seems we cannot verify the peer, so must add this to websockets config after the passphrase
 ```
