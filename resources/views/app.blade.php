@@ -16,7 +16,7 @@
         @routes
 {{--        <script src="https://cdn.jsdelivr.net/npm/weakmap-polyfill@2.0.4/weakmap-polyfill.min.js"></script>--}}
 {{--        <script src="https://cdn.jsdelivr.net/npm/symbol-es6@0.1.2/symbol-es6.js"></script>--}}
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6%2CSet%2CSymbol%2CWeakMap"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6%2CSet%2CSymbol%2CWeakMap%2Ces5%2Ces2015"></script>
         <script src="{{ mix('app.vanilla.js', 'vendor/web') }}" defer></script>
     </head>
     <body class="font-sans antialiased">
