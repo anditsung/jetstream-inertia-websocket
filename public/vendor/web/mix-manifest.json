@@ -1,6 +1,6 @@
 {
-    "/app.js": "/app.js?id=327aa39aa12f5b68e851",
-    "/app.css": "/app.css?id=0b8484ec4940b7864939",
-    "/websocket.js": "/websocket.js?id=767da1b74db4aea39e83",
-    "/app.vanilla.js": "/app.vanilla.js?id=d2716023e399ca96d7be"
+    "/app.js": "/app.js",
+    "/app.css": "/app.css",
+    "/websocket.js": "/websocket.js",
+    "/app.vanilla.js": "/app.vanilla.js"
 }
