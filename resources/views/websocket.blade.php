@@ -12,7 +12,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
-    <script src="{!! asset('vendor/websocket/jquery-3.6.0.js') !!}"></script>
+    <script src="{!! asset('vendor/websocket/jquery-3.6.0.min.js') !!}"></script>
     <script src="{{ asset('vendor/websocket/index.js') }}"></script>
 
 </head>
