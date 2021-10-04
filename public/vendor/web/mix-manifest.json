@@ -1,5 +1,6 @@
 {
     "/app.js": "/app.js?id=be3d180056bd7727b45c",
-    "/app.css": "/app.css?id=0b8484ec4940b7864939",
-    "/app.es5.js": "/app.es5.js?id=33214fca3f634c42863a"
+    "/app.css": "/app.css?id=beacece43109486718b9",
+    "/websocket.js": "/websocket.js?id=ec99d22faedc5a932e05",
+    "/app.vanilla.js": "/app.vanilla.js?id=33214fca3f634c42863a"
 }

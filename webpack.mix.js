@@ -12,7 +12,11 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', '').vue()
-    .babel(['public/vendor/web/app.js'], 'public/vendor/web/app.es5.js')
+    .scripts([
+        'resources/js/websocket/index.js',
+        'resources/js/websocket/jquery-3.6.0.min.js'
+    ], 'public/vendor/web/websocket.js')
+    .babel(['public/vendor/web/app.js'], 'public/vendor/web/app.vanilla.js')
     .postCss('resources/css/app.css', '', [
         require('postcss-import'),
         require('tailwindcss'),

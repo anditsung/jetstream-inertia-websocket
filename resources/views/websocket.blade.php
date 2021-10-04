@@ -12,8 +12,9 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('app.css', 'vendor/web') }}">
 
-    <script src="{!! asset('vendor/websocket/jquery-3.6.0.min.js') !!}"></script>
-    <script src="{{ asset('vendor/websocket/index.js') }}"></script>
+{{--    <script src="{!! asset('vendor/websocket/jquery-3.6.0.min.js') !!}"></script>--}}
+{{--    <script src="{{ asset('vendor/websocket/index.js') }}"></script>--}}
+    <script src="{{ mix('websocket.js', 'vendor/web') }}"></script>
 
 </head>
 <body class="font-sans antialiased">
