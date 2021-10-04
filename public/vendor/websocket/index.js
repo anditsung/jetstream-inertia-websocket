@@ -79,7 +79,7 @@ function registerWebsocket() {
 
 function sendActivity(data) {
     data = JSON.parse(data)
-    setInterval(() => {
+    setInterval(function () {
         var message = {
             event: "pusher:ping"
         }
