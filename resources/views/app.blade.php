@@ -16,7 +16,7 @@
         @routes
 {{--        add support for old browser--}}
 {{--        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6%2CSet%2CSymbol%2CWeakMap%2Ces5%2Ces2015"></script>--}}
-        <script src="{{ mix('app.vanilla.js', 'vendor/web') }}" defer></script>
+        <script src="{{ mix('app.js', 'vendor/web') }}" defer></script>
     </head>
     <body class="font-sans antialiased">
         @inertia
