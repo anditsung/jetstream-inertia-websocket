@@ -14,6 +14,7 @@
 
         <!-- Scripts -->
         @routes
+        <script src="https://cdn.jsdelivr.net/npm/weakmap-polyfill@2.0.4/weakmap-polyfill.min.js"></script>
         <script src="{{ mix('app.vanilla.js', 'vendor/web') }}" defer></script>
     </head>
     <body class="font-sans antialiased">
