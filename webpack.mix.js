@@ -17,11 +17,8 @@ mix.js('resources/js/app.js', '').vue()
         'resources/js/websocket/index.js',
         'resources/js/websocket/jquery-3.6.0.min.js'
     ], 'public/vendor/web/websocket.js')
-    .scripts([
-        'resources/js/es6-sham.js',
-        'resources/js/es6-shim.js'
-    ], 'public/vendor/web/es6.support.js')
-    .babel(['public/vendor/web/app.js'], 'public/vendor/web/app.vanilla.js')
+    //convert to vanilla js
+    //.babel(['public/vendor/web/app.js'], 'public/vendor/web/app.vanilla.js')
     .postCss('resources/css/app.css', '', [
         require('postcss-import'),
         require('tailwindcss'),
