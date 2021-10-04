@@ -10,11 +10,13 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <link rel="stylesheet" href="{{ mix('app.css', 'vendor/web') }}">
 
         <!-- Scripts -->
         @routes
-        <script src="{{ mix('js/app.js') }}" defer></script>
+{{--        add support for old browser--}}
+{{--        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6%2CSet%2CSymbol%2CWeakMap%2Ces5%2Ces2015"></script>--}}
+        <script src="{{ mix('app.js', 'vendor/web') }}" defer></script>
     </head>
     <body class="font-sans antialiased">
         @inertia

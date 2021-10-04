@@ -1,4 +1,5 @@
-const mix = require('laravel-mix');
+const mix = require('laravel-mix')
+require('es6-shim')
 
 /*
  |--------------------------------------------------------------------------
@@ -11,12 +12,19 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js').vue()
-    .postCss('resources/css/app.css', 'public/css', [
+mix.js('resources/js/app.js', '').vue()
+    .scripts([
+        'resources/js/websocket/index.js',
+        'resources/js/websocket/jquery-3.6.0.min.js'
+    ], 'public/vendor/web/websocket.js')
+    //convert to vanilla js
+    //.babel(['public/vendor/web/app.js'], 'public/vendor/web/app.vanilla.js')
+    .postCss('resources/css/app.css', '', [
         require('postcss-import'),
         require('tailwindcss'),
     ])
-    .webpackConfig(require('./webpack.config'));
+    .webpackConfig(require('./webpack.config'))
+    .setPublicPath('public/vendor/web')
 
 if (mix.inProduction()) {
     mix.version();

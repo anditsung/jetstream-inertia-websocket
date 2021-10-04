@@ -27,16 +27,9 @@
                 </svg>
             </div>
 
-            <div class="text-center">
-                <div class="flex justify-center p-4" v-show="quote">
-                    <span class="text-5xl -mt-5">"</span>
-                    <div class="flex flex-col space-x-2">
-                        <div class="italic">{{ quote }}</div>
-                        <div class="h-full text-right font-bold">{{ by }}</div>
-                    </div>
-                    <span class="text-5xl -mt-5">"</span>
-                </div>
-                <button class="px-4 py-2 bg-blue-300 rounded-lg hover:bg-blue-400" @click="getInspiring">Get Inspiring using websocket</button>
+            <div class="flex justify-center pt-5 space-x-4">
+                <a class="font-bold px-4 py-2 bg-blue-300 rounded-lg hover:bg-blue-400" href="/inertia-websocket">Inertia Websocket</a>
+                <a class="font-bold px-4 py-2 bg-blue-300 rounded-lg hover:bg-blue-400" href="/vanilla-websocket">Vanilla Websocket</a>
             </div>
 
             <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
@@ -203,25 +196,6 @@
             canRegister: Boolean,
             laravelVersion: String,
             phpVersion: String,
-        },
-
-        data: () => ({
-            quote: "",
-            by: "",
-        }),
-
-        created() {
-            Echo.channel('websocket-inspiring-event')
-                .listen('.inspiring-update', (event) => {
-                    this.quote = event.quote
-                    this.by = event.by
-            })
-        },
-
-        methods: {
-            getInspiring() {
-                axios.get('/get-websocket-inspiring')
-            },
         },
     })
 </script>
