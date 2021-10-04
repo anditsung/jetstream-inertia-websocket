@@ -1,5 +1,5 @@
-const mix = require('laravel-mix');
-require('laravel-mix-polyfill')
+const mix = require('laravel-mix')
+require('es6-shim')
 
 /*
  |--------------------------------------------------------------------------
@@ -12,11 +12,15 @@ require('laravel-mix-polyfill')
  |
  */
 
-mix.js(['resources/js/app.js', 'resources/js/weakmap.js'], '').vue()
+mix.js('resources/js/app.js', '').vue()
     .scripts([
         'resources/js/websocket/index.js',
         'resources/js/websocket/jquery-3.6.0.min.js'
     ], 'public/vendor/web/websocket.js')
+    .scripts([
+        'resources/js/es6-sham.js',
+        'resources/js/es6-shim.js'
+    ], 'public/vendor/web/es6.support.js')
     .babel(['public/vendor/web/app.js'], 'public/vendor/web/app.vanilla.js')
     .postCss('resources/css/app.css', '', [
         require('postcss-import'),

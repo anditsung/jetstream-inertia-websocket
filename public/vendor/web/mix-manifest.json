@@ -2,5 +2,6 @@
     "/app.js": "/app.js",
     "/app.css": "/app.css",
     "/websocket.js": "/websocket.js",
+    "/es6.support.js": "/es6.support.js",
     "/app.vanilla.js": "/app.vanilla.js"
 }
