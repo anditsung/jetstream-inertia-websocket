@@ -25,8 +25,14 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/websocket', function () {
+    return view('websocket');
+});
+
 Route::get('/get-websocket-inspiring', function () {
-    WebsocketInspiringEvent::dispatch();
+    //WebsocketInspiringEvent::dispatch();
+    event(new WebsocketInspiringEvent());
+    return response()->json(['OK']);
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
