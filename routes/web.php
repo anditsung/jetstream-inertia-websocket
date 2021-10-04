@@ -3,6 +3,7 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Events\WebsocketInspiringEvent;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,10 @@ Route::get('/', function () {
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
+});
+
+Route::get('/get-websocket-inspiring', function () {
+    WebsocketInspiringEvent::dispatch();
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
