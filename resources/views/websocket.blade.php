@@ -35,12 +35,14 @@
     </div>
 
     <script>
-        window.debug = false;
+        window.debug = true
         window.channel = 'websocket-inspiring-event'
         window.listen = 'inspiring-update'
 
         $(document).ready(function () {
             $('#quote_div').hide()
+
+            //load_websocket('{{ websocket_url() }}')
             init_websocket('{{ websocket_url() }}')
         })
 
