@@ -25,9 +25,17 @@ Route::get('/', function () {
     ]);
 });
 
+/** VANILLA JAVASCRIPT */
+
 Route::get('/vanilla-websocket', function () {
-    return view('websocket');
+    return view('inspiring');
 });
+
+Route::get('/display', function () {
+    return view('display');
+});
+
+/** VANILLA JAVASCRIPT */
 
 Route::get('/inertia-websocket', function () {
     return Inertia::render('Websocket');
