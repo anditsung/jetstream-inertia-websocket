@@ -31,10 +31,6 @@ Route::get('/vanilla-websocket', function () {
     return view('inspiring');
 });
 
-Route::get('/display', function () {
-    return view('display');
-});
-
 /** VANILLA JAVASCRIPT */
 
 Route::get('/inertia-websocket', function () {
